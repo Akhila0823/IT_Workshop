@@ -1,0 +1,293 @@
+ Unix commands examples:
+--------------------------------------------------------------------------|
+to create a file                                                                              
+=================================
+user@akki:~/Desktop/it workshop$ cat >f1.txt
+welcome to ubuntu
+linux and unix command
+rgukt is the one of greatest university
+this is unix^C
+-----------------------------------------------------------------
+
+Grep commands in Unix:
+------------------------------------------------------------------------
+to print the data where a welcome word is there 
+=====================================
+user@akki:~/Desktop/it workshop$ grep "welcome" f1.txt
+welcome to ubuntu
+-----------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------
+-h is used to for to print matching data
+================================
+user@akki:~/Desktop/it workshop$ grep -h "to" f1.txt
+welcome to ubuntu
+-----------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+-n is used to print the word we provided line number
+===============================================
+user@akki:~/Desktop/it workshop$ grep -n "one" f1.txt
+3:rgukt is the one of greatest university
+user@akki:~/Desktop/it workshop$ grep -n "this" f1.txt
+4:this is unix
+----------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------
+-e is used to print the 2 matched words we provided
+================================
+user@akki:~/Desktop/it workshop$ grep -e "linux" -e "unix" f1.txt
+linux and unix command
+this is unix
+--------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+-v is used to delete the line which consist of the word we provided
+=============================================
+user@akki:~/Desktop/it workshop$ grep -v "one" f1.txt
+welcome to ubuntu
+linux and unix command
+this is unix
+-------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------
+-o is used to print a provided word that present in the file
+==============================================
+user@akki:~/Desktop/it workshop$ grep -o "unix" f1.txt
+unix
+unix
+-------------------------------------------------------------------------------------------
+
+
+Sort Commands:
+--------------------------------------------------------------------------------------------
+sort is used to sort in alphabetical order
+==============================================
+user@akki:~/Desktop/it workshop$ sort month.txt
+april
+august
+december
+feburary
+january
+july
+june
+march
+may
+november
+october
+september
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+-M is used to sort in order
+=======================================
+user@akki:~/Desktop/it workshop$ sort -M month.txt
+january
+feburary
+march
+april
+may
+june
+july
+august
+september
+october
+november
+december
+
+-------------------------------------------------------------------------
+-n is used to sort numbers without removing duplicates
+=====================================
+user@akki:~/Desktop/it workshop$ sort -n num.txt
+1
+1
+2
+5
+6
+8
+11
+23
+100
+---------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+-u is used to sort numbers by removing duplicates
+====================================
+user@akki:~/Desktop/it workshop$ sort -u num.txt
+1
+100
+11
+2
+23
+5
+6
+8
+------------------------------------------------------------------------
+
+sed Commands:
+------------------------------------------------------------------------------
+making particular word as capital
+=====================================
+user@akki:~/Desktop/it workshop$ sed 's/unix/UNIX/' f1.txt
+welcome to ubuntu
+linux and UNIX command
+rgukt is the one of greatest university
+this is UNIX
+------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------
+user@akki:~/Desktop/it workshop$ cat >emp.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+8 | Pagesatvik director purchase 80000^C 
+--------------------------------------------------------------------------
+this command is used to print 2nd and 3rd column 
+===========================================
+user@akki:~/Desktop/it workshop$ awk '{print $3,$2}' emp.txt
+account manager
+account clerk
+sales manager
+account manager
+sales peon
+sales clerk
+sales peon
+user@akki:~/Desktop/it workshop$ 
+-------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+ this comand is used to Print the lines which match the given pattern.
+===========================================
+user@akki:~/Desktop/it workshop$ awk '/manager/ {print}' emp.txt
+ajay manager account 45000
+varun manager sales 50000
+amit manager account 47000
+user@akki:~/Desktop/it workshop$ awk '/peon/ {print}' emp.txt
+tarun peon sales 15000
+sunil peon sales 13000
+-------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+sort commands
+user@akki:~/Desktop/it workshop$ man sort
+
+       -b, --ignore-leading-blanks
+              ignore leading blanks
+
+       -d, --dictionary-order
+              consider only blanks and alphanumeric characters
+
+       -f, --ignore-case
+              fold lower case to upper case characters
+
+       -g, --general-numeric-sort
+              compare according to general numerical value
+
+       -i, --ignore-nonprinting
+              consider only printable characters
+
+       -M, --month-sort
+              compare (unknown) < 'JAN' < ... < 'DEC'
+
+       -h, --human-numeric-sort
+              compare human readable numbers (e.g., 2K 1G)
+
+       -n, --numeric-sort
+              compare according to string numerical value
+
+
+       -R, --random-sort
+              shuffle, but group identical keys.  See shuf(1)
+
+       --random-source=FILE
+              get random bytes from FILE
+
+       -r, --reverse
+              reverse the result of comparisons
+
+       --sort=WORD
+              sort according to WORD: general-numeric -g, human-numeric  -h,  month
+              -M, numeric -n, random -R, version -V
+
+       -V, --version-sort
+              natural sort of (version) numbers within text
+
+       Other options:
+
+       --batch-size=NMERGE
+              merge at most NMERGE inputs at once; for more use temp files
+
+       -c, --check, --check=diagnose-first
+              check for sorted input; do not sort
+
+       -C, --check=quiet, --check=silent
+              like -c, but do not report first bad line
+
+       --compress-program=PROG
+              compress temporaries with PROG; decompress them with PROG -d
+
+   --debug
+              annotate  the part of the line used to sort, and warn about question‐
+              able usage to stderr
+
+       --files0-from=F
+              read input from the files specified by NUL-terminated names  in  file
+              F; If F is - then read names from standard input
+
+       -k, --key=KEYDEF
+              sort via a key; KEYDEF gives location and type
+
+       -m, --merge
+              merge already sorted files; do not sort
+
+       -o, --output=FILE
+              write result to FILE instead of standard output
+
+       -s, --stable
+              stabilize sort by disabling last-resort comparison
+
+       -S, --buffer-size=SIZE
+              use SIZE for main memory buffer
+
+       -t, --field-separator=SEP
+              use SEP instead of non-blank to blank transition
+
+       -T, --temporary-directory=DIR
+              use  DIR for temporaries, not $TMPDIR or /tmp; multiple options spec‐
+              ify multiple directories
+
+  --parallel=N
+              change the number of sorts run concurrently to N
+
+       -u, --unique
+              with -c, check for strict ordering; without -c, output only the first
+              of an equal run
+
+       -z, --zero-terminated
+              line delimiter is NUL, not newline
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

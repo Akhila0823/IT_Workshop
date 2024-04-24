@@ -1,0 +1,295 @@
+
+Unix user Commands:
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+1.whoami :-
+     This  command is used to show your username
+user@akki:~$ whoami
+user
+--------------------------------------------------------------------------------------------------------------------------------------------------
+2.id:-
+  This command is used to print user identity
+user@akki:~$ id
+uid=1000(user) gid=1000(user) groups=1000(user),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+3.groups:-
+   This command is used to  show which groups user belongs to
+user@akki:~$ groups
+user adm cdrom sudo dip plugdev lpadmin lxd sambashare
+--------------------------------------------------------------------------------------------------------------------------------------------------
+4.passwd:-
+  This command is used to change user password
+user@akki:~$ passwd
+Changing password for user.
+Current password: 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+5.who:-
+ This command is used to  find out who is logged into the system
+ user@akki:~$ who
+user     :0           2024-03-31 10:02 (:0)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+6.last:-
+This command is used to how history of logins into the system
+user@akki:~$ last
+user     :0           :0               Sun Mar 31 10:02   still logged in
+reboot   system boot  5.15.0-101-gener Sun Mar 31 10:02   still running
+user     :0           :0               Sat Mar 30 15:57 - down   (00:48)
+reboot   system boot  5.15.0-101-gener Sat Mar 30 15:57 - 16:45  (00:48)
+user     :0           :0               Sat Mar 30 15:44 - down   (00:11)
+reboot   system boot  5.15.0-101-gener Sat Mar 30 15:44 - 15:56  (00:11)
+user     :0           :0               Sat Mar 30 14:37 - down   (01:05)
+Wed Jan 31 09:54 - down   (00:04)
+reboot   system boot  5.13.0-35-generi Wed Mar 16 09:12 - 09:15  (00:03)
+user     :0           :0               Wed Mar 16 07:39 - down   (01:29)
+reboot   system boot  5.13.0-35-generi Wed Mar 16 07:39 - 09:08  (01:29)
+user     :0           :0               Wed Mar 16 07:32 - down   (00:06)
+reboot   system boot  5.13.0-35-generi Wed Mar 16 07:32 - 07:39  (00:06)
+
+wtmp begins Wed Mar 16 07:32:23 2022
+user@akki:~$ 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Unix file operations:-
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.nslookup google.com:-
+ This command is used to print the server address 
+user@akki:~$ nslookup google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.195.206
+Name:	google.com
+Address: 2404:6800:4007:81e::200e
+---------------------------------------------------------------------------------------------------------------------------------------------
+2.touch :-
+This comand is used to create a empty file
+user@akki:~$ touch f1.txt
+------------------------------------------------------------------------------------------------------------------------------------------
+3.cat:-
+ This command is used to Create a file with entered cotent
+ user@akki:~$ cat >f2.txt
+hello
+rgukt
+user@akki:~$ 
+---------------------------------------------------------------------------------------------------------------------------------------------
+4.cp:-
+This command is used to Copies the contents from  one file to another file and the contents of first file are retained
+user@akki:~$ cp f2.txt f1.txt
+--------------------------------------------------------------------------------------------------------------------------------------------
+5.rm:-
+This command is used to Remove files and directories
+user@akki:~$ rm f1.txt
+----------------------------------------------------------------------------------------------------------------------------------------------
+6.mkdir:-
+This command is used  to Create a directory
+user@akki:~$ mkdir f
+---------------------------------------------------------------------------------------------------------------------------------------------
+7.rmdir:-
+This command is used to Remove a directory
+user@akki:~$ rmdir f
+---------------------------------------------------------------------------------------------------------------------------------------------
+8.cd:-
+This command is used to Change directory
+user@akki:~$ cd Downloads
+user@akki:~/Downloads$ 
+---------------------------------------------------------------------------------------------------------------------------------------------
+9.pwd:-
+This command is used to Print the present working directory
+user@akki:~/Downloads$ pwd
+/home/user/Downloads
+--------------------------------------------------------------------------------------------------------------------------------------------
+10.ls:-
+This command is used to list all the directory contents
+ user@akki:~/Downloads$ ls
+ abc.java                                 IMG-20231209-WA0004.jpg         mysql-connector-j_8.3.0-1ubuntu23.10_all.deb
+ a.out                                    IMG-20231209-WA0005.jpg         palindrome.class
+ BookBerth.class                          IMG-20231209-WA0006.jpg        'Presentation1 (1).pptx'
+'concurrency control 4.pptx'              IMG-20231209-WA0007.jpg         TestFinallyBlock1.class
+ cp.c                                     IMG-20231209-WA0011.jpg         test.php
+'DBMS schemas-Lab.docx'                   IMG-20240110-WA0017.jpg         ticket.java
+ dd.class                                 IMG-20240110-WA0018.jpg        'train5$1.class'
+ dd.java                                  IMG-20240110-WA0019.jpg         train5.class
+ DOC-20221102-WA0002                      IMG-20240110-WA0020.jpg         University-DB.docx
+'Employee DB -Questionnaire.docx'         IMG-20240320-WA0005.jpg         week6
+ finally.java                             Indexing.docx                   xampp-linux-x64-8.2.12-0-installer.run
+ google-chrome-stable_current_amd64.deb   input_output_organization.pdf
+----------------------------------------------------------------------------------------------------------------------------------------------
+11.which:-
+This command is used to 
+user@akki:~/Downloads$ which -a cat
+/usr/bin/cat
+/bin/cat
+---------------------------------------------------------------------------------------------------------------------------------------------
+12.man:- 
+ This command is used as Interface for working with the online reference manuals
+user@akki:~/Downloads$ man touch
+
+ TOUCH(1)                                                 User Commands                                                 TOUCH(1)
+
+NAME
+       touch - change file timestamps
+
+SYNOPSIS
+       touch [OPTION]... FILE...
+
+DESCRIPTION
+       Update the access and modification times of each FILE to the current time.
+
+       A FILE argument that does not exist is created empty, unless -c or -h is supplied.
+
+       A  FILE argument string of - is handled specially and causes touch to change the times of the file associated with stan‐
+       dard output.
+
+       Mandatory arguments to long options are mandatory for short options too.
+
+       -a     change only the access time
+
+       -c, --no-create
+              do not create any files
+
+       -d, --date=STRING
+              parse STRING and use it instead of current time
+
+       -f     (ignored)
+
+       -h, --no-dereference
+              affect each symbolic link instead of any referenced file (useful only on systems that can change  the  timestamps
+              of a symlink)
+
+       -m     change only the modification time
+ Manual page touch(1) line 1/75 38% (press h for help or q to quit)
+
+ -r, --reference=FILE
+              use this file's times instead of current time
+
+       -t STAMP
+              use [[CC]YY]MMDDhhmm[.ss] instead of current time
+
+       --time=WORD
+              change the specified time: WORD is access, atime, or use: equivalent to -a WORD is modify or mtime: equivalent to
+              -m
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+       Note that the -d and -t options accept different time-date formats.
+
+DATE STRING
+       The --date=STRING is a mostly free format human readable date string such as  "Sun,  29  Feb  2004  16:21:42  -0800"  or
+       "2004-02-29  16:21:42"  or even "next Thursday".  A date string may contain items indicating calendar date, time of day,
+       time zone, day of week, relative time, relative date, and numbers.  An empty string indicates the beginning of the  day.
+       The date string format is more complex than is easily documented here but is fully described in the info documentation.
+
+AUTHOR
+       Written by Paul Rubin, Arnold Robbins, Jim Kingdon, David MacKenzie, and Randy Smith.
+
+REPORTING BUGS
+       GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+       Report touch translation bugs to <https://translationproject.org/team/>
+
+ Manual page touch(1) line 32/75 82% (press h for help or q to quit)
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+13.find:-
+This command is Used to search for files and directories as mentioned in the ‘expression’
+user@akki:~/Desktop$ find java -type c -name class
+-------------------------------------------------------------------------------------------------------------------------------------------------
+14.du:-
+This command is used to Estimate disk usage is blocks
+user@akki:~/Downloads$ du
+60	./week6
+8	./.vscode
+270092	.
+------------------------------------------------------------------------------------------------------------------------------------------------
+14.df:-
+This command is used to Show the number of free blocks for the mounted file system
+user@akki:~/Downloads$ df -l
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             3910052        0   3910052   0% /dev
+tmpfs             790156     2152    788004   1% /run
+/dev/nvme0n1p2 244506940 93584492 138429392  41% /
+tmpfs            3950776        0   3950776   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+tmpfs            3950776        0   3950776   0% /sys/fs/cgroup
+/dev/loop0           128      128         0 100% /snap/bare/5
+/dev/loop2         57088    57088         0 100% /snap/core18/2812
+/dev/loop3         65536    65536         0 100% /snap/core20/2105
+/dev/loop1         57088    57088         0 100% /snap/core18/2796
+/dev/loop7         66816    66816         0 100% /snap/gtk-common-themes/1519
+/dev/loop10       358144   358144         0 100% /snap/gnome-3-38-2004/143
+/dev/loop5         65536    65536         0 100% /snap/core20/2182
+/dev/loop4        358144   358144         0 100% /snap/gnome-3-38-2004/140
+/dev/loop11        41472    41472         0 100% /snap/snapd/20671
+/dev/loop9         40064    40064         0 100% /snap/snapd/21184
+/dev/loop8         47104    47104         0 100% /snap/snap-store/638
+/dev/loop12        93952    93952         0 100% /snap/gtk-common-themes/1535
+/dev/loop13        12672    12672         0 100% /snap/snap-store/959
+/dev/loop6         76032    76032         0 100% /snap/core22/1122
+/dev/loop15        84096    84096         0 100% /snap/whatsdesk/28
+/dev/loop14        75904    75904         0 100% /snap/core22/1033
+/dev/nvme0n1p1    523248     6216    517032   2% /boot/efi
+tmpfs             790152       28    790124   1% /run/user/1000
+---------------------------------------------------------------------------------------------------------------------------------------------
+15.cal:-
+This command is used to show calender
+user@akki:~/Downloads$ cal 4 2024
+     April 2024       
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30              
+---------------------------------------------------------------------------------------------------------------------------------------------
+16.date:-
+This Command is used to Displays the system date and time.      
+user@akki:~/Downloads$ date
+Sunday 31 March 2024 11:23:07 AM UTC
+----------------------------------------------------------------------------------------------------------------------------------------------
+           
+           This all are the commnds we have learnt in week 1 now we try to Answer the below questions
+
+1) How to Create a File?
+1st way :creating a empty file 
+ user@akki:~/Downloads$ touch a.txt
+ 
+ 2nd way:creating file with content
+ user@akki:~/Downloads$ cat >b.txt
+hello 
+welcome
+to 
+IT WORKSHOP
+user@akki:~/Downloads$ 
+
+2) How to view the list of Commands executed? 
+  user@akki:~/Downloads$ history
+ 1047  javac -d . mul.java
+ 1048  javac -d . operations.java
+ 1049  java cal.operations
+ 1050  javac -d . cse.java
+ 1051  javac -d . ece.java
+ 1052  javac -d . ce.java
+ 1053  javac -d . branches.java
+  
+3) How to view your username in Unix?
+user@akki:~$ whoami
+user
+
+4) List some of the common and most widely used UNIX commands.
+whoami
+id
+groups
+cd
+ls
+touch
+cat
+
+
+5) How to Remove files using unix commands?
+user@akki:~$ rm f1.txt
+
+6) Create a RGUKT new file
+ user@akki:~/Downloads$ touch RGUKT
+ 
