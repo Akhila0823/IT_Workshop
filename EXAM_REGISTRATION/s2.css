@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-container {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    page-break-inside: avoid;
+    border: 2px solid black; 
+    flex: 1; 
+}
+.content-container {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    page-break-inside: avoid;
+    flex: 1; /* Ensures content-container takes up the available space */
+}
+
+.ticket {
+    margin-bottom: 20px;
+}
+
+.ticket h1 {
+    text-align: center;
+}
+
+.ticket .details {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ticket .details-left {
+    flex: 1;
+    text-align: left;
+    padding:40px;
+}
+
+.ticket .photo {
+    margin-left: 20px;
+}
+
+.ticket .photo img {
+	padding:20px;
+    width: 100px;
+    height: 150px;
+    border-radius: 10%;
+}
+
+.print-button-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.print-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.print-button:hover {
+    background-color: #45a049;
+}
+
+.instructions-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.instructions {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.instructions li span {
+    font-weight: bold;
+    color: #333;
+}
+.instructions-container {
+    border: 2px solid black; 
+    padding: 15px; 
+}
+
+@media print {
+    .content-container {
+        page-break-inside: avoid;
+    }
+    .print-button-container {
+        display: none;
+    }
+}
+

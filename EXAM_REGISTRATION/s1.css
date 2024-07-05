@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.ticket-container {
+    background-color: white;
+    border: 2px solid #00838f;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #00796b;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.details {
+    text-align: left;
+    font-size: 1.2em;
+    color: black;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.details strong {
+    color: black;
+}
+
+.photo img {
+    border-radius: 50%;
+    border: 2px solid #00796b;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.print-button {
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.print-button:hover {
+    background-color: #004d40;
+}
+
+.clear {
+    clear: both;
+}
+
